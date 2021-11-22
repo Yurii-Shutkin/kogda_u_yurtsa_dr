@@ -32,6 +32,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 30px;
+    box-sizing: border-box;
 }
 
 .invalid { 
@@ -67,10 +68,23 @@ body {
     width: 300px;
     font-size: 20px;
     border-radius: 5px;
+    box-sizing: border-box;
+    border-width: 1px;
+    padding: 0;
 }
 
 .btn {
-    height: 36px;
+    position: relative;
+    top: -1px;
+    font-family: 'Sansation_Light';
+    padding: 0;
+    height: 30px;
     width: 70px;
-    font-size: 15px;
+    font-size: 14px;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.text {
+    text-align: center;
 }

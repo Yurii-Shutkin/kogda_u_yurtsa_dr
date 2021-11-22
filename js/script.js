@@ -11,7 +11,8 @@ const click = document.querySelector('.btn').onclick = () => {
     for (let elem of trueAnswers) {
         if (input.value === elem) {
             input.classList.add('true');
-            p.classList.add('true-color')
+            p.classList.add('true-color');
+            btn.classList.add('true')
             return p.innerHTML = 'БЛЯТЬ!!! НУ НАКОНЕЦ-ТО!!! АХУЕТЬ!!!!! УРА ЕБАТЬ!!!!!!'
         }
 
