@@ -6,9 +6,12 @@ const click = document.querySelector('.btn').onclick = () => {
     const fasleAnswerMessages = ['Мимо', 'Неа', 'Нет', 'Промах!', 'Я в тебя верю', 'Давай еще разок попробуй', 'Соберись', 'Лол', 'Ахахахах, нет!', 'Кек', 'Дам подсказку, это число месяца', 'Ололололо', 'с 365-го раза точно получится', 'Ну ты серьезно?', 'Не выдумывай!', 'НИТ :c', 'Стыдно должно быть!', 'Загляни в календарь, там есть эта дата', 'Интересный выбор'];
 
     const p = document.querySelector('.text');
+    
 
     for (let elem of trueAnswers) {
         if (input.value === elem) {
+            input.classList.add('true');
+            p.classList.add('true-color')
             return p.innerHTML = 'БЛЯТЬ!!! НУ НАКОНЕЦ-ТО!!! АХУЕТЬ!!!!! УРА ЕБАТЬ!!!!!!'
         }
 
@@ -16,6 +19,9 @@ const click = document.querySelector('.btn').onclick = () => {
 
     if(input.value === '' || /^\s+$/.test(input.value)) {
         input.value = ''
+        input.focus();
+        input.classList.add('invalid');
+        p.classList.add('invalid-color')
         return p.innerHTML = 'Ну введи ты хоть что-нибудь, Хоспаде!';
     }
 
@@ -27,7 +33,17 @@ const click = document.querySelector('.btn').onclick = () => {
 
     const randomElem = getRandomIntInclusive(0, fasleAnswerMessages.length - 1);
 
-    input.value = ''
-    p.innerHTML = fasleAnswerMessages[randomElem];
+    input.value = '';
+    input.focus();
+    input.classList.add('invalid');
+    p.classList.add('invalid-color')
+    return p.innerHTML = fasleAnswerMessages[randomElem];
 }
 
+(function() {
+    document.querySelector('.input_date').addEventListener('keydown', function(e) {
+      if (e.keyCode === 13) {
+        click()
+      }
+    });
+  })();

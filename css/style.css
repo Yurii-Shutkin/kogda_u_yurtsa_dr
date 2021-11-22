@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.invalid { 
+    border-color: #a80909;
+}
+
+.invalid-color {
+    color: #a80909;
+}
+
+.true {
+    border-color: #07cc07;
+}
+
+.true-color {
+     color: #07cc07; 
+}
+
+.input_date {
+    outline: none;
+}
+
+.container {
+    max-width: 1110px;
+}
+
+.input_wrap {
+    padding-top: 150px;
+    text-align: center;
+    align-self: center;
+}
